@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="site-version" content="2026-10-04_20-00">
+    <title>Saurya Aditya Sahu | Computer Science, AI/ML & Software Developer</title>
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Saurya Aditya Sahu",
+        "url": "https://saurya.halfbyte.in/",
+        "jobTitle": "Computer Science Student",
+        "sameAs": [
+            "https://github.com/sahusaurya",
+            "https://www.linkedin.com/in/sauryasahu",
+            "https://leetcode.com/u/sahusaurya/"
+        ],
+        "knowsAbout": [
+            "Computer Science",
+            "Software Engineering",
+            "Artificial Intelligence",
+            "Machine Learning",
+            "Data Structures and Algorithms"
+        ]
+        }
+    </script>
+    <meta name="description"
+      content="Saurya Aditya Sahu is a computer science student and software developer working on AI/ML, software engineering and open-source projects. Explore projects, experience and technical work.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://saurya.halfbyte.in/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #64748b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+            --bg-start: #f8fafc;
+            --bg-end: #e2e8f0;
+            --card-bg: #ffffff;
+            --card-shadow: rgba(0,0,0,0.06);
+            --dot-border: #ffffff;
+            --tag-bg: #f1f5f9;
+            --nav-bg: rgba(248,250,252,0.92);
+        }
+
+        [data-theme="dark"] {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #94a3b8;
+            --dark: #f1f5f9;
+            --light: #1e293b;
+            --border: #334155;
+            --bg-start: #0f172a;
+            --bg-end: #1e293b;
+            --card-bg: #1e293b;
+            --card-shadow: rgba(0,0,0,0.3);
+            --dot-border: #1e293b;
+            --tag-bg: #0f172a;
+            --nav-bg: rgba(15,23,42,0.92);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        /* offset anchor targets so fixed navbar doesn't cover headings */
+        section[id] { scroll-margin-top: 68px; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* ── NAVBAR ─────────────────────────────────────── */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .navbar-inner {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--secondary);
+            text-decoration: none;
+            padding: 6px 11px;
+            border-radius: 6px;
+            letter-spacing: 0.02em;
+            transition: color 0.2s, background 0.2s;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover { color: var(--primary); background: rgba(37,99,235,0.08); }
+        .nav-links a.active { color: var(--primary); font-weight: 600; }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .theme-btn {
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--secondary);
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .theme-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* sun is shown in light mode (to switch to dark), moon shown in dark mode */
+        .theme-btn .fa-moon { display: none; }
+        [data-theme="dark"] .theme-btn .fa-sun  { display: none; }
+        [data-theme="dark"] .theme-btn .fa-moon { display: block; }
+
+        .fa-sun { color: #f59e0b; }
+
+        /* ── CONTAINER ───────────────────────────────────── */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 88px 20px 40px;
+        }
+
+        /* ── HERO ────────────────────────────────────────── */
+        .hero {
+            background: linear-gradient(135deg, #1a3a8f 0%, #0f2260 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 56px 40px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 20px 60px rgba(37,99,235,0.25);
+        }
+
+        .hero-avatar {
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.35);
+            margin: 0 auto 20px;
+            overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .hero-avatar img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero h1 { font-size: 2.3rem; font-weight: 700; margin-bottom: 8px; }
+
+        .hero .titles {
+            display: flex; justify-content: center;
+            gap: 10px; flex-wrap: wrap; margin-bottom: 14px;
+        }
+
+        .hero .title-badge {
+            background: rgba(255,255,255,0.18);
+            padding: 4px 14px; border-radius: 20px;
+            font-size: 0.9rem; font-weight: 500;
+        }
+
+        .hero .meta {
+            font-size: 0.88rem; opacity: 0.85;
+            display: flex; justify-content: center;
+            align-items: center; gap: 18px;
+            flex-wrap: wrap; margin-bottom: 22px;
+        }
+
+        .hero .meta span { display: flex; align-items: center; gap: 5px; }
+
+        .social-links { display: flex; justify-content: center; gap: 11px; }
+
+        .social-links a {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: rgba(255,255,255,0.2); color: white;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; transition: all 0.25s; font-size: 0.95rem;
+        }
+
+        .social-links a:hover {
+            background: white; color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ── CARDS ───────────────────────────────────────── */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 20px var(--card-shadow);
+            border: 1px solid var(--border);
+            transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .card-title {
+            font-size: 1.05rem; font-weight: 700;
+            color: var(--dark); margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+
+        .card-title i { color: var(--primary); font-size: 0.95rem; }
+
+        /* ── ABOUT ───────────────────────────────────────── */
+        .about-text { color: var(--secondary); font-size: 0.97rem; line-height: 1.85; }
+        .italic-paragraph {
+            font-style: italic;
+            color: var(--secondary);
+            margin-top: 8px;
+        }
+
+        /* ── TIMELINE ────────────────────────────────────── */
+        .timeline-item {
+            position: relative;
+            padding-left: 22px;
+            padding-bottom: 22px;
+            border-left: 2px solid var(--border);
+        }
+
+        .timeline-item:last-child { padding-bottom: 0; border-left: 2px solid transparent; }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute; left: -7px; top: 6px;
+            width: 12px; height: 12px; border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--dot-border);
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .timeline-header {
+            display: flex; justify-content: space-between;
+            align-items: flex-start; flex-wrap: wrap;
+            gap: 8px; margin-bottom: 5px;
+        }
+
+        .timeline-title { font-weight: 600; font-size: 0.98rem; color: var(--dark); }
+
+        .timeline-date {
+            font-size: 0.8rem; color: var(--primary);
+            background: rgba(37,99,235,0.09);
+            padding: 3px 10px; border-radius: 20px;
+            font-weight: 500; white-space: nowrap;
+        }
+
+        .timeline-sub { font-size: 0.88rem; color: var(--secondary); margin-bottom: 8px; }
+
+        .timeline-body { font-size: 0.875rem; color: var(--secondary); line-height: 1.75; }
+
+        .timeline-body ul { list-style: none; padding: 0; }
+
+        .timeline-body ul li {
+            padding-left: 14px; position: relative; margin-bottom: 5px;
+        }
+
+        .timeline-body ul li::before {
+            content: '›'; position: absolute; left: 0;
+            color: var(--primary); font-weight: 700;
+        }
+
+        .timeline-link {
+            display: inline-flex; align-items: center; gap: 5px;
+            font-size: 0.8rem; color: var(--primary);
+            text-decoration: none; margin-top: 8px; font-weight: 500;
+        }
+
+        .timeline-link:hover { text-decoration: underline; }
+
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+
+        .tech-tag {
+            background: rgba(37,99,235,0.08); color: var(--primary);
+            padding: 3px 10px; border-radius: 12px;
+            font-size: 0.77rem; font-weight: 500;
+            border: 1px solid rgba(37,99,235,0.2);
+        }
+
+        /* ── SKILLS ──────────────────────────────────────── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px,1fr));
+            gap: 20px;
+        }
+
+        .skill-category h4 {
+            font-size: 0.78rem; font-weight: 700; color: var(--dark);
+            margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em;
+        }
+
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+        .skill-tag {
+            background: var(--tag-bg); color: var(--secondary);
+            padding: 5px 12px; border-radius: 20px;
+            font-size: 0.8rem; border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+        /* ── CERT / AWARD / LEADERSHIP ITEMS ─────────────── */
+        .simple-list { display: flex; flex-direction: column; gap: 0; }
+
+        .simple-item {
+            position: relative;
+            padding-left: 22px;
+            padding-bottom: 18px;
+            border-left: 2px solid var(--border);
+        }
+
+        .simple-item:last-child { padding-bottom: 0; border-left: 2px solid transparent; }
+
+        .simple-item::before {
+            content: '';
+            position: absolute; left: -7px; top: 6px;
+            width: 12px; height: 12px; border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--dot-border);
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .simple-header {
+            display: flex; justify-content: space-between;
+            align-items: flex-start; flex-wrap: wrap;
+            gap: 8px; margin-bottom: 4px;
+        }
+
+        .simple-title { font-weight: 600; font-size: 0.95rem; color: var(--dark); }
+
+        .simple-date {
+            font-size: 0.8rem; color: var(--primary);
+            background: rgba(37,99,235,0.09);
+            padding: 3px 10px; border-radius: 20px;
+            font-weight: 500; white-space: nowrap;
+        }
+
+        .simple-sub { font-size: 0.85rem; color: var(--secondary); margin-bottom: 4px; }
+
+        .simple-desc { font-size: 0.85rem; color: var(--secondary); line-height: 1.7; }
+
+        /* ── CONTACT ─────────────────────────────────────── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+            gap: 14px;
+        }
+
+        .contact-item {
+            display: flex; align-items: center; gap: 14px;
+            padding: 14px 16px; background: var(--tag-bg);
+            border-radius: 12px; transition: all 0.25s;
+            border: 1px solid var(--border);
+        }
+
+        .contact-item:hover { transform: translateX(4px); }
+
+        .contact-icon {
+            width: 40px; height: 40px; border-radius: 10px;
+            background: var(--primary); color: white;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.9rem; flex-shrink: 0;
+        }
+
+        .contact-info h4 { font-size: 0.76rem; color: var(--secondary); font-weight: 400; margin-bottom: 2px; }
+        .contact-info p { font-size: 0.88rem; font-weight: 500; color: var(--dark); }
+        .contact-info a { color: var(--dark); text-decoration: none; }
+        .contact-info a:hover { color: var(--primary); }
+
+        /* ── FOOTER ──────────────────────────────────────── */
+        .footer { text-align: center; padding: 26px; color: var(--secondary); font-size: 0.84rem; }
+
+        /* ── RESPONSIVE ──────────────────────────────────── */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { padding: 38px 22px; }
+            .hero h1 { font-size: 1.85rem; }
+            .card { padding: 22px 18px; }
+            .timeline-header, .simple-header { flex-direction: column; }
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ──────────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+        <a class="nav-logo" href="#top">Saurya Aditya Sahu</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#honors">Honors</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+            <li><a href="#contact">Socials</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="container" id="top">
+
+    <!-- ── HERO ──────────────────────────────────────────── -->
+    <section class="hero">
+        <div class="hero-avatar">
+            <img src="pfp.jpg" alt="Saurya Aditya Sahu">
+        </div>
+        <h1>Saurya Aditya Sahu</h1>
+        <div class="titles">
+            <span class="title-badge">ML Engineer</span>
+            <span class="title-badge">Competitive Programmer</span>
+        </div>
+        <div class="meta">
+            <span><i class="fas fa-map-marker-alt"></i> Hyderabad, India</span>
+            <span><i class="fas fa-graduation-cap"></i> IIIT Hyderabad</span>
+            <span><i class="fas fa-award"></i> CGPA 9</span>
+        </div>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/sauryasahu" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/sahusaurya" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://leetcode.com/u/sahusaurya/" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+        </div>
+    </section>
+
+    <!-- ── ABOUT ──────────────────────────────────────────── -->
+    <section class="card" id="about">
+        <h2 class="card-title"><i class="fas fa-user-circle"></i>About Me</h2>
+        <p class="about-text">
+            <strong>Computer Science and Engineering student at IIIT Hyderabad </strong> 
+            with hands-on experience in machine learning, deep learning, and computer vision. Proficient in
+            Python, PyTorch, and TensorFlow, with applied project work spanning imitation learning, neural network
+            architectures, and data-driven systems. Completed the full <strong>DeepLearning.AI Machine Learning
+            Specialization</strong>, including supervised, unsupervised, and reinforcement learning. 
+        </p>
+    </section>
+
+    <!-- ── PROJECTS ───────────────────────────────────────── -->
+    <section class="card" id="experience">
+        <h2 class="card-title"><i class="fas fa-flask"></i>Research &amp; Project Experience</h2>
+
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span class="timeline-title">Wipro Ltd. (Summer Internship)</span>
+                <span class="timeline-date">Jun 2026 – Jul 2026</span>
+            </div>
+            <p class="timeline-sub">Enterprise Onboarding Hub &nbsp;·&nbsp; Bangalore, India</p>
+            <div class="timeline-body">
+                <ul>
+                    <li>Designed, built, and deployed a full-stack onboarding platform used in production, streamlining the intern lifecycle from pre-registration and asset requests to learning-path completion and manager approvals.</li>
+                    <li>Built 50+ RESTful API endpoints with FastAPI and a 15+ table SQLAlchemy schema, serving role-based portals (intern, manager, admin) with JWT auth via HTTP-only cookies and bcrypt password hashing.</li>
+                    <li>Built a RAG pipeline that indexes SOP PDFs and a real-time WebSocket alert system, integrating LLMs for daily log synthesis, blocker detection, and automated progress reports.</li>
+                    <li>Developed the frontend as a responsive Next.js 14 / React / TypeScript SPA with Tailwind CSS and Zustand, and set up a CI/CD pipeline (GitHub Actions, Ruff, ESLint, mypy, pytest, Docker).</li>
+                </ul>
+            </div>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span><span class="tech-tag">FastAPI</span><span class="tech-tag">SQLAlchemy</span>
+                <span class="tech-tag">Next.js</span><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">WebSocket</span><span class="tech-tag">JWT</span><span class="tech-tag">Docker</span>
+                <span class="tech-tag">GitHub Actions</span>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span class="timeline-title">Imitation Learning Agent — International Research Collaboration</span>
+                <span class="timeline-date">Dec 2025 – Present</span>
+            </div>
+            <p class="timeline-sub">Machine Learning Research &nbsp;·&nbsp; PES University, Bangalore &amp; Central Macedonia, Greece</p>
+            <div class="timeline-body">
+                <ul>
+                    <li>Designed a vision-to-action pipeline trained exclusively on raw pixel frames and human input logs — no access to backend game data. Achieved functional agent mimicry within the first training iterations.</li>
+                    <li>Built and trained a neural-network-based imitation learning model using PyTorch and Torchvision, processing real-time screen captures via OpenCV and mss, recording keyboard/mouse actions with pynput at ~30 FPS on Apple Silicon (MPS).</li>
+                    <li>Engineered the full ML pipeline (data collection → preprocessing → model training → inference), reducing agent response latency to under 50 ms per frame.</li>
+                    <li>Collaborated asynchronously with a peer researcher in Central Macedonia, Greece, coordinating model iterations via GitHub.</li>
+                </ul>
+            </div>
+            <a class="timeline-link" href="https://github.com/sahusaurya/pila_mac" target="_blank">
+                <i class="fab fa-github"></i> github.com/sahusaurya/pila_mac
+            </a>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span><span class="tech-tag">PyTorch</span><span class="tech-tag">Torchvision</span>
+                <span class="tech-tag">OpenCV</span><span class="tech-tag">NumPy</span><span class="tech-tag">Pandas</span>
+                <span class="tech-tag">mss</span><span class="tech-tag">pynput</span><span class="tech-tag">Apple MPS</span>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span class="timeline-title">IEEE CS Bangalore Chapter Internship</span>
+                <span class="timeline-date">Feb 2026 - Present</span>
+            </div>
+            <p class="timeline-sub">Machine Learning Research, Bangalore</p>
+            <div class="timeline-body">
+                <ul>
+                    <li>Selected to conduct exploratory ML research within the IEEE CS in Bangalore chapter, analyzing current deep learning methodologies for early detection of diseases in plants.</li>
+                    <li>Documented research outcomes and prepared structured technical reports consistent with IEEE standards, building skills in technical writing and data communication.</li>
+                </ul>
+            </div>
+        </div>
+         <!--
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span class="timeline-title">Cybersecurity Challenge Author — Smash &amp; Crack CTF</span>
+                <span class="timeline-date">Nov 2025</span>
+            </div>
+            <p class="timeline-sub">The Alcoding Club · PES University, Bangalore</p>
+            <div class="timeline-body">
+                <ul>
+                    <li>Designed an original cybersecurity challenge for the university's Capture The Flag event, requiring logical decomposition and pattern recognition from participants.</li>
+                    <li>Skills directly transferable to data science problem-solving: adversarial thinking and constraint-based reasoning.</li>
+                </ul>
+            </div>
+        </div>
+       
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span class="timeline-title">Typing Speed Game — Python Desktop Application</span>
+                <span class="timeline-date">Oct 2023</span>
+            </div>
+            <p class="timeline-sub">Personal Project</p>
+            <div class="timeline-body">
+                <ul>
+                    <li>Designed and developed a fully functional desktop application featuring multiple difficulty modes and real-time WPM/accuracy feedback.</li>
+                    <li>Integrated MySQL for persistent local score storage across sessions, demonstrating end-to-end software development from ideation to deployment.</li>
+                </ul>
+            </div>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span><span class="tech-tag">Tkinter</span><span class="tech-tag">MySQL</span>
+            </div>
+        </div>
+        -->
+    </section>
+
+    <!-- ── SKILLS ─────────────────────────────────────────── -->
+    <section class="card" id="skills">
+        <h2 class="card-title"><i class="fas fa-code"></i>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Languages</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python (Advanced)</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Verilog</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>ML / AI Frameworks</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Keras</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">OpenCV</span>
+                    <span class="skill-tag">Torchvision</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Data &amp; Visualization</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>ML Concepts</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Supervised Learning</span>
+                    <span class="skill-tag">Unsupervised Learning</span>
+                    <span class="skill-tag">Reinforcement Learning</span>
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">Imitation Learning</span>
+                    <span class="skill-tag">CNNs</span>
+                    <span class="skill-tag">Computer Vision</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Developer Tools</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">Jupyter Notebook</span>
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">iVerilog</span>
+                    <span class="skill-tag">UTM (VMs)</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Platforms / OS</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Linux (Ubuntu, Kali)</span>
+                    <span class="skill-tag">macOS</span>
+                    <span class="skill-tag">Windows</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── EDUCATION ──────────────────────────────────────── -->
+    <section class="card" id="education">
+        <h2 class="card-title"><i class="fas fa-graduation-cap"></i>Education</h2>
+
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span class="timeline-title">Bachelor of Technology and MS by research in Computer Science and Engineering </span>
+                <span class="timeline-date">2026 – 2030</span>
+            </div>
+            <p class="timeline-sub">IIIT Hyderabad (International Institute of Information Technology) &nbsp;·&nbsp;</p>
+            <div class="timeline-body">
+                Relevant Coursework: Data Structures & Algorithms, Operating Systems, Computer Networks, Database Management Systems, Machine Learning
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span class="timeline-title">B.Tech in Computer Science and Engineering</span>
+                <span class="timeline-date">2024 – 2026</span>
+            </div>
+            <p class="timeline-sub">PES University, Bangalore &nbsp;·&nbsp; CGPA: 9 / 10</p>
+            <div class="timeline-body">
+                Relevant Coursework: Data Structures & Algorithms, Operating Systems, Computer Networks, Database Management Systems, Machine Learning
+                <p class="italic-paragraph">Transferred to IIIT Hyderabad to continue my B.Tech and MS in Computer Science and Engineering.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span class="timeline-title">Class XII — CBSE &nbsp;·&nbsp; 95.6%</span>
+                <span class="timeline-date">Mar 2024</span>
+            </div>
+            <p class="timeline-sub">BGS National Public School, Bangalore</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <span class="timeline-title">Class X — CBSE &nbsp;·&nbsp; 97.6%</span>
+                <span class="timeline-date">Mar 2022</span>
+            </div>
+            <p class="timeline-sub">BGS National Public School, Bangalore</p>
+        </div>
+    </section>
+
+    <!-- ── CERTIFICATIONS ─────────────────────────────────── -->
+    <section class="card" id="certifications">
+        <h2 class="card-title"><i class="fas fa-certificate"></i>Certifications</h2>
+        <div class="simple-list">
+
+            <div class="simple-item">
+                <div class="simple-header">
+                    <span class="simple-title">Unsupervised Learning, Recommenders &amp; Reinforcement Learning</span>
+                    <span class="simple-date">Feb 2026</span>
+                </div>
+                <p class="simple-sub">DeepLearning.AI / Coursera</p>
+            </div>
+
+            <div class="simple-item">
+                <div class="simple-header">
+                    <span class="simple-title">Advanced Learning Algorithms (Neural Networks &amp; Decision Trees)</span>
+                    <span class="simple-date">Feb 2026</span>
+                </div>
+                <p class="simple-sub">DeepLearning.AI / Coursera</p>
+            </div>
+
+            <div class="simple-item">
+                <div class="simple-header">
+                    <span class="simple-title">Supervised Machine Learning: Regression &amp; Classification</span>
+                    <span class="simple-date">Aug 2025</span>
+                </div>
+                <p class="simple-sub">DeepLearning.AI / Coursera</p>
+            </div>
+
+            <div class="simple-item">
+                <div class="simple-header">
+                    <span class="simple-title">Python (Basic) Certificate</span>
+                    <span class="simple-date">Dec 2024</span>
+                </div>
+                <p class="simple-sub">HackerRank</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── HONORS & AWARDS ────────────────────────────────── -->
+    <section class="card" id="honors">
+        <h2 class="card-title"><i class="fas fa-award"></i>Honors &amp; Awards</h2>
+        <div class="simple-list">
+
+            <div class="simple-item">
+                <div class="simple-header">
+                    <span class="simple-title">Prof. CNR Rao Scholarship — PES University</span>
+                    <span class="simple-date">2024 – 2026</span>
+                </div>
+                <p class="simple-sub">4 consecutive semesters</p>
+                <p class="simple-desc">Awarded for ranking in the top 25% by SGPA in the CSE department. Received for 4 consecutive semesters throughout 2024–2026.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── LEADERSHIP ─────────────────────────────────────── -->
+    <section class="card" id="leadership">
+        <h2 class="card-title"><i class="fas fa-users"></i>Leadership &amp; Extracurriculars</h2>
+        <div class="simple-list">
+
+            <div class="simple-item">
+                <div class="simple-header">
+                    <span class="simple-title">Tech Domain Organizer — Aatmatrisha 2026</span>
+                    <span class="simple-date">2026</span>
+                </div>
+                <p class="simple-sub">PES University Flagship Fest</p>
+                <p class="simple-desc">Leading tech domain operations for PESU's flagship annual fest.</p>
+            </div>
+
+            <div class="simple-item">
+                <div class="simple-header">
+                    <span class="simple-title">Logistics &amp; Disciplinary Committee — Aatmatrisha 2025</span>
+                    <span class="simple-date">2025</span>
+                </div>
+                <p class="simple-sub">PES University Flagship Fest</p>
+                <p class="simple-desc">Managed operations for PESU's flagship annual tech-cultural fest with 2,000+ attendees.</p>
+            </div>
+
+            <div class="simple-item">
+                <div class="simple-header">
+                    <span class="simple-title">Core Team Member — Graduation Day 2025</span>
+                    <span class="simple-date">2025</span>
+                </div>
+                <p class="simple-sub">PES University</p>
+                <p class="simple-desc">Coordinated end-to-end event flow for a 1,000+ attendee formal ceremony.</p>
+            </div>
+
+            <div class="simple-item">
+                <div class="simple-header">
+                    <span class="simple-title">Disciplinary Committee — Chords 2024</span>
+                    <span class="simple-date">2024</span>
+                </div>
+                <p class="simple-sub">PESU Annual Inter-College Music Competition</p>
+                <p class="simple-desc">Supported event management for PESU's annual inter-college music competition.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── CONTACT ────────────────────────────────────────── -->
+    <section class="card" id="contact">
+        <h2 class="card-title"><i class="fas fa-share-alt"></i>Socials</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                <div class="contact-info">
+                    <h4>LinkedIn</h4>
+                    <p><a href="https://linkedin.com/in/sauryasahu" target="_blank">linkedin.com/in/sauryasahu</a></p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fab fa-github"></i></div>
+                <div class="contact-info">
+                    <h4>GitHub</h4>
+                    <p><a href="https://github.com/sahusaurya" target="_blank">github.com/sahusaurya</a></p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-code"></i></div>
+                <div class="contact-info">
+                    <h4>LeetCode</h4>
+                    <p><a href="https://leetcode.com/u/sahusaurya/" target="_blank">leetcode.com/u/sahusaurya</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 Saurya Aditya Sahu</p>
+    </footer>
+
+</div>
+
+<script>
+    function toggleTheme() {
+        const html = document.documentElement;
+        const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+    }
+
+    // Restore saved theme (default is light)
+    (function() {
+        const saved = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+    })();
+
+    // Navbar scroll shadow
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.style.boxShadow = window.scrollY > 10
+            ? '0 2px 16px rgba(0,0,0,0.08)' : 'none';
+        updateActiveNav();
+    });
+
+    // Active nav highlight
+    const sectionIds = ['about','experience','skills','education','certifications','honors','leadership','contact'];
+    function updateActiveNav() {
+        let current = '';
+        sectionIds.forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            if (el.getBoundingClientRect().top <= 80) current = id;
+        });
+        document.querySelectorAll('.nav-links a').forEach(a => {
+            const href = a.getAttribute('href')?.replace('#','');
+            a.classList.toggle('active', href === current);
+        });
+    }
+</script>
+</body>
+</html>
